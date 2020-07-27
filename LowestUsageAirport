@@ -1,0 +1,7 @@
+SELECT
+date,
+percent_of_baseline,
+airport_name
+FROM
+  `bigquery-public-data.covid19_geotab_mobility_impact.airport_traffic`
+WHERE percent_of_baseline = (select MIN(percent_of_baseline) from `bigquery-public-data.covid19_geotab_mobility_impact.airport_traffic` WHERE airport_name = "McCarran International");
