@@ -1,0 +1,8 @@
+SELECT airport_name,
+date,
+percent_of_baseline
+FROM
+  `bigquery-public-data.covid19_geotab_mobility_impact.airport_traffic`
+WHERE country_name = "United States of America (the)" AND airport_name = "McCarran International"
+GROUP BY airport_name, percent_of_baseline, date
+ORDER BY date;
