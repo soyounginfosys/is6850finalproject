@@ -1,0 +1,20 @@
+SELECT
+  country_name,
+  state_region,
+  airport_name,
+  city,
+  date,
+  percent_of_baseline,
+  center_point_geom,
+  airport_geom
+FROM
+  `bigquery-public-data.covid19_geotab_mobility_impact.airport_traffic`
+WHERE
+  airport_name IN (
+    'Chicago OHare International',
+    'Charlotte Douglas International',
+    'John F. Kennedy International',
+    'Seattle-Tacoma International ',
+    'Los Angeles International',
+    'McCarran International',
+    'San Francisco International');
